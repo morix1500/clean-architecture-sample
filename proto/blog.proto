@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package blog;
+
+service BlogService {
+	rpc Insert (InsertRequest) returns (InsertResponse) {}
+	rpc Select (SelectRequest) returns (SelectResponse) {}
+}
+
+message InsertRequest {
+	int32 id = 1;
+	string title = 2;
+	string content = 3;
+}
+
+message InsertResponse{}
+
+message SelectRequest {
+	int32 id = 1;
+}
+
+message SelectResponse {
+	int32 id = 1;
+	string title = 2;
+	string content = 3;
+}
