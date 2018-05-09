@@ -3,8 +3,8 @@ package controllers
 import (
 	"github.com/morix1500/clean-architecture-sample/domain"
 	"github.com/morix1500/clean-architecture-sample/interfaces/database"
-	"github.com/morix1500/clean-architecture-sample/usecase"
 	pb "github.com/morix1500/clean-architecture-sample/proto"
+	"github.com/morix1500/clean-architecture-sample/usecase"
 )
 
 type BlogController struct {
@@ -40,8 +40,8 @@ func (ctr *BlogController) Select(req *pb.SelectRequest) (*pb.SelectResponse, er
 		panic(err)
 	}
 	return &pb.SelectResponse{
-		Id: b.Id,
-		Title: b.Title,
+		Id:      b.Id,
+		Title:   b.Title,
 		Content: b.Content,
 	}, nil
 }
